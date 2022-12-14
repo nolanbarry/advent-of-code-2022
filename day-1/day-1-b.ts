@@ -1,10 +1,8 @@
-import { readInput, sum , sort} from "../utils";
+import { readInput, sum , sort, split} from "../utils";
 
 const input = readInput(1)
 
-const elves: number[][] = [[]]
-
-input.forEach(calories => calories ? elves.at(-1)!.push(Number(calories)) : elves.push([]) )
+const elves: number[][] = split(input, "").map(snacks => snacks.map(Number))
 
 const result = sum(sort(elves.map(sum)).slice(0, 3))
 console.log(result)

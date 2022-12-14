@@ -1,10 +1,8 @@
-import { readInput, sum , max} from "../utils";
+import { readInput, sum , max, split} from "../utils";
 
 const input = readInput(1)
 
-const elves: number[][] = [[]]
-
-input.forEach(calories => calories ? elves.at(-1)!.push(Number(calories)) : elves.push([]) )
+const elves: number[][] = split(input, "").map(snacks => snacks.map(Number))
 
 const result = max(elves.map(sum))
 console.log(result)
