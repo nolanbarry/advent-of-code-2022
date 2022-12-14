@@ -6,4 +6,5 @@ const elves: number[][] = [[]]
 
 input.forEach(calories => calories ? elves.at(-1)!.push(Number(calories)) : elves.push([]) )
 
-console.log(max(elves.map(sum)))
+const result = max(elves.map(sum))
+console.log(result)
