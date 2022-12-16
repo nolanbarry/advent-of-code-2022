@@ -17,3 +17,8 @@ export const split = <T>(array: T[], separator: T | ((item: T) => boolean), incl
   })
   return result
 }
+export const boundsChecker = (width: number, height: number) => {
+  return (row: number, column: number) => {
+    return row >= 0 && row < height && column >= 0 && column < width
+  }
+}
